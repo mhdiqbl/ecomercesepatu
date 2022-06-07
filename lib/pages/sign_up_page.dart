@@ -31,7 +31,7 @@ class SignUpPage extends StatelessWidget {
       );
     }
 
-Widget namedInput() {
+    Widget namedInput() {
       return Container(
         margin: EdgeInsets.only(top: 50),
         child: Column(
@@ -242,7 +242,9 @@ Widget namedInput() {
         width: double.infinity,
         margin: EdgeInsets.only(top: 30),
         child: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/home');
+          },
           style: TextButton.styleFrom(
               backgroundColor: primaryColor,
               shape: RoundedRectangleBorder(
@@ -264,7 +266,6 @@ Widget namedInput() {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            
             Text(
               'Already have an account? ',
               style: subtitletTextStyle.copyWith(
