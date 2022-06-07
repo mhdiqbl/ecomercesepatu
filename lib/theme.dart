@@ -3,8 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 double defaultMargin = 30.0;
 
-
-Color primary = Color(0xff6C5ECF);
+Color primaryColor = Color(0xff6C5ECF);
 Color secondaryColor = Color(0xff38ABBE);
 Color alertColor = Color(0xffED6363);
 Color priceColor = Color(0xff2C96F1);
@@ -29,6 +28,10 @@ TextStyle priceTextStyle = GoogleFonts.poppins(
 
 TextStyle subtitletTextStyle = GoogleFonts.poppins(
   color: subtitleColor,
+);
+
+TextStyle purpleTextStyle = GoogleFonts.poppins(
+  color: primaryColor,
 );
 
 FontWeight light = FontWeight.w300;
