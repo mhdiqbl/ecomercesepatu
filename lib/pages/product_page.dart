@@ -14,6 +14,18 @@ class _ProductPageState extends State<ProductPage> {
     'assets/image_shoes.png',
   ];
 
+  List familiarShoes = [
+    'assets/image_shoes.png',
+    'assets/image_shoes.png',
+    'assets/image_shoes.png',
+    'assets/image_shoes.png',
+    'assets/image_shoes.png',
+    'assets/image_shoes.png',
+    'assets/image_shoes.png',
+    'assets/image_shoes.png',
+    'assets/image_shoes.png',
+  ];
+
   int currentIndex = 0;
 
   @override
@@ -28,6 +40,22 @@ class _ProductPageState extends State<ProductPage> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: currentIndex == index ? primaryColor : Color(0xffC4C4C4),
+        ),
+      );
+    }
+
+    Widget familiarShoesCard(String imageURL) {
+      return Container(
+        width: 54,
+        height: 54,
+        margin: EdgeInsets.only(
+          right: 16,
+        ),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(imageURL),
+          ),
+          borderRadius: BorderRadius.circular(6),
         ),
       );
     }
@@ -96,6 +124,7 @@ class _ProductPageState extends State<ProductPage> {
     }
 
     Widget content() {
+      int index = -1;
       return Container(
         width: double.infinity,
         margin: EdgeInsets.only(
@@ -110,95 +139,140 @@ class _ProductPageState extends State<ProductPage> {
         child: Column(
           children: [
             //HEADER
-          Container(
-            margin: EdgeInsets.only(top: defaultMargin,
-            left: defaultMargin,
-            right: defaultMargin,
-            ),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('TERREX URBAN',
-                      style: primaryTextStyle.copyWith(
-                        fontSize: 18,
-                        fontWeight: semiBold,
-                      ),
-                      ),
-                      Text('Hiking',
-                      style: secondaryTextStyle.copyWith(
-                        fontSize: 12,
-                      ),
-                      ),
-                    ],
+            Container(
+              margin: EdgeInsets.only(
+                top: defaultMargin,
+                left: defaultMargin,
+                right: defaultMargin,
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'TERREX URBAN',
+                          style: primaryTextStyle.copyWith(
+                            fontSize: 18,
+                            fontWeight: semiBold,
+                          ),
+                        ),
+                        Text(
+                          'Hiking',
+                          style: secondaryTextStyle.copyWith(
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                Image.asset('assets/button_wishlist.png',
-                width: 46,
-                ),
-              ],
+                  Image.asset(
+                    'assets/button_wishlist.png',
+                    width: 46,
+                  ),
+                ],
+              ),
             ),
-          ),
 
-          //PRICE
-          Container(
-            width: double.infinity,
-            margin: EdgeInsets.only(
-              top: 20,
-              left: defaultMargin,
-              right: defaultMargin,
+            //PRICE
+            Container(
+              width: double.infinity,
+              margin: EdgeInsets.only(
+                top: 20,
+                left: defaultMargin,
+                right: defaultMargin,
+              ),
+              padding: EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: backgroundColor2,
+                borderRadius: BorderRadius.circular(4),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Price start from',
+                    style: primaryTextStyle,
+                  ),
+                  Text(
+                    '\$56,34',
+                    style: priceTextStyle.copyWith(
+                      fontSize: 16,
+                      fontWeight: semiBold,
+                    ),
+                  ),
+                ],
+              ),
             ),
-            padding: EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: backgroundColor2,
-              borderRadius: BorderRadius.circular(4),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Price start from',
-                style: primaryTextStyle,
-                ),
-                Text('\$56,34',
-                style: priceTextStyle.copyWith(
-                  fontSize: 16,
-                  fontWeight: semiBold,
-                ),
-                ),
-              ],
-            ),
-          ),
 
-          //DEKRIPSI
-          Container(
-            width: double.infinity,
-            margin: EdgeInsets.only(
-              top: defaultMargin,
-              left: defaultMargin,
-              right: defaultMargin,
+            //DEKRIPSI
+            Container(
+              width: double.infinity,
+              margin: EdgeInsets.only(
+                top: defaultMargin,
+                left: defaultMargin,
+                right: defaultMargin,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Description',
+                    style: primaryTextStyle.copyWith(
+                      fontWeight: medium,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 12,
+                  ),
+                  Text(
+                    'Ini adalah bagian deksripsi yg panjang sekali Ini adalah bagian deksripsi yg panjang sekali Ini adalah bagian deksripsi yg panjang sekali Ini adalah bagian deksripsi yg panjang sekali ',
+                    style: subtitletTextStyle.copyWith(
+                      fontWeight: light,
+                    ),
+                    textAlign: TextAlign.justify,
+                  ),
+                ],
+              ),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Description',
-                style: primaryTextStyle.copyWith(
-                  fontWeight: medium,
-                ),
-                ),
-                SizedBox(
-                  height: 12,
-                ),
-                Text('Ini adalah bagian deksripsi yg panjang sekali Ini adalah bagian deksripsi yg panjang sekali Ini adalah bagian deksripsi yg panjang sekali Ini adalah bagian deksripsi yg panjang sekali ',
-                style: subtitletTextStyle.copyWith(
-                  fontWeight: light,
-                ),
-                textAlign: TextAlign.justify,
-                ),
-              ],
-            ),
-          ),
+
+            //FAMILIAR SHOES
+            Container(
+              width: double.infinity,
+              margin: EdgeInsets.only(
+                top: defaultMargin,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: defaultMargin,
+                    ),
+                    child: Text(
+                      'Familiar Shoes',
+                      style: primaryTextStyle.copyWith(
+                        fontWeight: medium,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 12,
+                  ),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: familiarShoes.map((image) {
+                        index++;
+                        return Container(margin: EdgeInsets.only(left: index == 0 ? defaultMargin : 0), 
+                        child: familiarShoesCard(image));
+                      }).toList(),
+                    ),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       );
