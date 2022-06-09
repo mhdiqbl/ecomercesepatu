@@ -6,7 +6,92 @@ class EditProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget nameInput() {
+      return Container(
+        margin: EdgeInsets.only(
+          top: 30,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Name',
+              style: secondaryTextStyle.copyWith(
+                fontSize: 13,
+              ),
+            ),
+            TextFormField(
+              style: primaryTextStyle,
+              decoration: InputDecoration(
+                hintText: 'Muhammad Iqbal',
+                hintStyle: primaryTextStyle,
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: subtitleColor)
+                )
+              ),
+            )
+          ],
+        ),
+      );
+    }
 
+    Widget usernameInput() {
+      return Container(
+        margin: EdgeInsets.only(
+          top: 30,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'username',
+              style: secondaryTextStyle.copyWith(
+                fontSize: 13,
+              ),
+            ),
+            TextFormField(
+              style: primaryTextStyle,
+              decoration: InputDecoration(
+                hintText: '@Iqbal',
+                hintStyle: primaryTextStyle,
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: subtitleColor)
+                )
+              ),
+            )
+          ],
+        ),
+      );
+    }
+
+    Widget emailInput() {
+      return Container(
+        margin: EdgeInsets.only(
+          top: 30,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Email Address',
+              style: secondaryTextStyle.copyWith(
+                fontSize: 13,
+              ),
+            ),
+            TextFormField(
+              style: primaryTextStyle,
+              decoration: InputDecoration(
+                hintText: 'iqbal@gmail.com',
+                hintStyle: primaryTextStyle,
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: subtitleColor)
+                )
+              ),
+            )
+          ],
+        ),
+      );
+    }
 
     Widget content() {
       return Container(
@@ -28,10 +113,13 @@ class EditProfilePage extends StatelessWidget {
                 image: DecorationImage(
                   image: AssetImage(
                     'assets/image_profile.png',
-                  )
-                )
+                  ),
+                ),
               ),
-            )
+            ),
+            nameInput(),
+            usernameInput(),
+            emailInput(),
           ],
         ),
       );
@@ -42,27 +130,29 @@ class EditProfilePage extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(70),
         child: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.close),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        backgroundColor: backgroundColor1,
-        elevation: 0,
-        centerTitle: true,
-        title: Text('Edit Profile'),
-        actions: [IconButton(
-          icon: Icon(
-            Icons.check,
-            color: primaryColor,
-          ), 
-          onPressed: () {}, 
-        ),
+          leading: IconButton(
+            icon: Icon(Icons.close),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          backgroundColor: backgroundColor1,
+          elevation: 0,
+          centerTitle: true,
+          title: Text('Edit Profile'),
+          actions: [
+            IconButton(
+              icon: Icon(
+                Icons.check,
+                color: primaryColor,
+              ),
+              onPressed: () {},
+            ),
           ],
         ),
       ),
       body: content(),
+      resizeToAvoidBottomInset: false,
     );
   }
 }
