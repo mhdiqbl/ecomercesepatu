@@ -39,16 +39,18 @@ class ProfilePage extends StatelessWidget {
                         fontWeight: semiBold,
                       ),
                     ),
-                    Text('@iqbl24',
-                    style: subtitletTextStyle.copyWith(
-                      fontSize: 16,
-                    ),
+                    Text(
+                      '@iqbl24',
+                      style: subtitletTextStyle.copyWith(
+                        fontSize: 16,
+                      ),
                     ),
                   ],
                 ),
               ),
-              Image.asset('assets/button_exit.png',
-              width: 20,
+              Image.asset(
+                'assets/button_exit.png',
+                width: 20,
               ),
             ],
           ),
@@ -56,9 +58,74 @@ class ProfilePage extends StatelessWidget {
       );
     }
 
+    Widget menuItem(String text) {
+      return Container(
+        margin: EdgeInsets.only(top: 16),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(text,
+            style: secondaryTextStyle.copyWith(
+              fontSize: 13,
+            ),
+            ),
+            Icon(Icons.chevron_right,
+            color: primaryTextColor,
+            ),
+          ],
+        ),
+      );
+    }
+
+    Widget content() {
+      return Expanded(
+        child: Container(
+          padding: EdgeInsets.symmetric(
+            horizontal: defaultMargin,
+          ),
+          width: double.infinity, //agar warna pd column tdk hilang
+          decoration: BoxDecoration(
+            color: backgroundColor3,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                'Account',
+                style: primaryTextStyle.copyWith(
+                  fontSize: 16,
+                  fontWeight: semiBold,
+                ),
+              ),
+              menuItem('Edit Profile'),
+              menuItem('Your Order'),
+              menuItem('Help'),
+              SizedBox(
+                height: 30,
+              ),
+              Text(
+                'General',
+                style: primaryTextStyle.copyWith(
+                  fontSize: 16,
+                  fontWeight: semiBold,
+                ),
+              ),
+              menuItem('Privacy & Policy'),
+              menuItem('Term of Service'),
+              menuItem('Rate App'),
+            ],
+          ),
+        ),
+      );
+    }
+
     return Column(
       children: [
         header(),
+        content(),
       ],
     );
   }
