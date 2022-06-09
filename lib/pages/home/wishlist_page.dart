@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sepatu/theme.dart';
+import 'package:sepatu/widgets/wishlist_card.dart';
 
 class WishlistPage extends StatelessWidget {
   const WishlistPage({Key? key}) : super(key: key);
@@ -26,47 +27,68 @@ class WishlistPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('assets/image_wishlist.png',
-              width: 74,
+              Image.asset(
+                'assets/image_wishlist.png',
+                width: 74,
               ),
               SizedBox(
                 height: 23,
               ),
-              Text('You dont have dream',
-              style: primaryTextStyle.copyWith(
-                fontSize: 16,
-                fontWeight: medium,
-              ),
+              Text(
+                'You dont have dream',
+                style: primaryTextStyle.copyWith(
+                  fontSize: 16,
+                  fontWeight: medium,
+                ),
               ),
               SizedBox(
                 height: 12,
               ),
-              Text('Find someone news',
-              style: secondaryTextStyle
-          ),
-          SizedBox(height: 20,),
-          Container(
-            height: 44,
-            child: TextButton(onPressed: (){}, 
-            style: TextButton.styleFrom(
-              padding: EdgeInsets.symmetric(
-                vertical: 10,
-                horizontal: 24,
+              Text('Find someone news', style: secondaryTextStyle),
+              SizedBox(
+                height: 20,
               ),
-              backgroundColor: primaryColor,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12)
+              Container(
+                height: 44,
+                child: TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 24,
+                    ),
+                    backgroundColor: primaryColor,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12)),
+                  ),
+                  child: Text(
+                    'Explore Store',
+                    style: primaryTextStyle.copyWith(
+                      fontSize: 16,
+                      fontWeight: medium,
+                    ),
+                  ),
+                ),
               ),
-            ),
-            child: Text('Explore Store',
-            style: primaryTextStyle.copyWith(
-              fontSize: 16,
-              fontWeight: medium,
-            ),
-            ),
-            ),
+            ],
           ),
-          ],
+        ),
+      );
+    }
+
+    Widget content() {
+      return Expanded(
+        child: Container(
+          color: backgroundColor3,
+          child: ListView(
+            padding: EdgeInsets.symmetric(
+              horizontal: defaultMargin,
+            ),
+            children: [
+              WishListCard(),
+              WishListCard(),
+              WishListCard(),
+            ],
           ),
         ),
       );
@@ -75,7 +97,8 @@ class WishlistPage extends StatelessWidget {
     return Column(
       children: [
         header(),
-        emptyWishlist(),
+        //emptyWishlist(),
+        content(),
       ],
     );
   }
