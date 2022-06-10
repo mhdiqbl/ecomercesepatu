@@ -45,7 +45,8 @@ class Cartpage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12),
                     )),
                 onPressed: () {
-                  Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, '/home', (route) => false);
                 },
                 child: Text(
                   'Explore Store',
@@ -58,6 +59,14 @@ class Cartpage extends StatelessWidget {
             )
           ],
         ),
+      );
+    }
+
+    Widget content() {
+      return ListView(
+        children: [
+          Card()
+        ],
       );
     }
 
