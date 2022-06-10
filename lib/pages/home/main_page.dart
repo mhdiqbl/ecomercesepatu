@@ -18,7 +18,9 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     Widget cartButton() {
       return FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/cart');
+        },
         backgroundColor: secondaryColor,
         child: Image.asset(
           'assets/icon_cart.png',
@@ -47,9 +49,7 @@ class _MainPageState extends State<MainPage> {
             items: [
               BottomNavigationBarItem(
                 icon: Container(
-                  margin: EdgeInsets.only(
-                    top: 20,
-                    bottom: 10),
+                  margin: EdgeInsets.only(top: 20, bottom: 10),
                   child: Image.asset(
                     'assets/icon_home.png',
                     width: 21,
@@ -60,9 +60,7 @@ class _MainPageState extends State<MainPage> {
               ),
               BottomNavigationBarItem(
                 icon: Container(
-                  margin: EdgeInsets.only(
-                    top: 20,
-                    bottom: 10),
+                  margin: EdgeInsets.only(top: 20, bottom: 10),
                   child: Image.asset(
                     'assets/icon_chat.png',
                     width: 20,
@@ -73,9 +71,7 @@ class _MainPageState extends State<MainPage> {
               ),
               BottomNavigationBarItem(
                 icon: Container(
-                  margin: EdgeInsets.only(
-                    top: 20,
-                    bottom: 10),
+                  margin: EdgeInsets.only(top: 20, bottom: 10),
                   child: Image.asset(
                     'assets/icon_wishlist.png',
                     width: 20,
@@ -86,9 +82,7 @@ class _MainPageState extends State<MainPage> {
               ),
               BottomNavigationBarItem(
                 icon: Container(
-                  margin: EdgeInsets.only(
-                    top: 20,
-                    bottom: 10),
+                  margin: EdgeInsets.only(top: 20, bottom: 10),
                   child: Image.asset(
                     'assets/icon_profile.png',
                     width: 18,
