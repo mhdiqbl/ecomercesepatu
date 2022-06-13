@@ -27,30 +27,26 @@ class CheckoutPage extends StatelessWidget {
         children: [
           // NOTE: LIST ITEMS
           Container(
-            margin: EdgeInsets.only(
-              top: defaultMargin
-            ),
+            margin: EdgeInsets.only(top: defaultMargin),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                'List Items ',
-                style: primaryTextStyle.copyWith(
-                  fontSize: 16,
-                  fontWeight: medium,
+                  'List Items ',
+                  style: primaryTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: medium,
+                  ),
                 ),
-              ),
-              CheckoutCard(),
-              CheckoutCard(),
+                CheckoutCard(),
+                CheckoutCard(),
               ],
-          ),
+            ),
           ),
 
           //NOTE: ADDRESS DETAILS
           Container(
-            margin: EdgeInsets.only(
-              top: defaultMargin
-            ),
+            margin: EdgeInsets.only(top: defaultMargin),
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
               color: backgroundColor4,
@@ -59,11 +55,12 @@ class CheckoutPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Address Details',
-                style: primaryTextStyle.copyWith(
-                  fontSize: 16,
-                  fontWeight: medium,
-                ),
+                Text(
+                  'Address Details',
+                  style: primaryTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: medium,
+                  ),
                 ),
                 SizedBox(
                   height: 12,
@@ -72,14 +69,17 @@ class CheckoutPage extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                        Image.asset('assets/icon_store_location.png',
-                        width: 40,
+                        Image.asset(
+                          'assets/icon_store_location.png',
+                          width: 40,
                         ),
-                        Image.asset('assets/icon_line.png',
-                        height: 30,
+                        Image.asset(
+                          'assets/icon_line.png',
+                          height: 30,
                         ),
-                        Image.asset('assets/icon_your_address.png',
-                        width: 40,
+                        Image.asset(
+                          'assets/icon_your_address.png',
+                          width: 40,
                         ),
                       ],
                     ),
@@ -89,43 +89,45 @@ class CheckoutPage extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Store Location',
-                        style: secondaryTextStyle.copyWith(
-                          fontSize: 12,
-                          fontWeight: light,
+                        Text(
+                          'Store Location',
+                          style: secondaryTextStyle.copyWith(
+                            fontSize: 12,
+                            fontWeight: light,
+                          ),
                         ),
-                        ),
-                        Text('Adidas Core',
-                        style: primaryTextStyle.copyWith(
-                          fontWeight: medium,
-                        ),
+                        Text(
+                          'Adidas Core',
+                          style: primaryTextStyle.copyWith(
+                            fontWeight: medium,
+                          ),
                         ),
                         SizedBox(
                           height: defaultMargin,
                         ),
-                        Text('Your Address',
-                        style: secondaryTextStyle.copyWith(
-                          fontSize: 12,
-                          fontWeight: light,
+                        Text(
+                          'Your Address',
+                          style: secondaryTextStyle.copyWith(
+                            fontSize: 12,
+                            fontWeight: light,
+                          ),
                         ),
-                        ),
-                        Text('marsemoon',
-                        style: primaryTextStyle.copyWith(
-                          fontWeight: medium,
-                        ),
+                        Text(
+                          'marsemoon',
+                          style: primaryTextStyle.copyWith(
+                            fontWeight: medium,
+                          ),
                         ),
                       ],
                     )
                   ],
+                ),
+              ],
             ),
-            ],
-            ),
-      ),
+          ),
 
-Container(
-  margin: EdgeInsets.only(
-              top: defaultMargin
-            ),
+          Container(
+            margin: EdgeInsets.only(top: defaultMargin),
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
               color: backgroundColor4,
@@ -229,21 +231,23 @@ Container(
                   ],
                 ),
                 // NOTE: CHECKOUT BUTTON
-          SizedBox(
-            height: defaultMargin,
-          ),
-          Divider(
-            thickness: 1,
-            color: Color(0xff2E3141),
-          ),
-          Container(
+                SizedBox(
+                  height: defaultMargin,
+                ),
+                Divider(
+                  thickness: 1,
+                  color: Color(0xff2E3141),
+                ),
+                Container(
                   height: 50,
                   width: double.infinity,
                   margin: EdgeInsets.symmetric(
                     vertical: defaultMargin,
                   ),
                   child: TextButton(
-                    onPressed: (){},
+                    onPressed: () {
+                      Navigator.pushNamedAndRemoveUntil(context, '/checkout-success', (route) => false);
+                    },
                     style: TextButton.styleFrom(
                       backgroundColor: primaryColor,
                       shape: RoundedRectangleBorder(
@@ -260,11 +264,10 @@ Container(
                   ),
                 ),
               ],
-            ),   
             ),
-      ],
-    );
-
+          ),
+        ],
+      );
     }
 
     return Scaffold(
@@ -275,9 +278,9 @@ Container(
         centerTitle: true,
         title: Text(
           'Checkout Details',
+        ),
       ),
-    ),
-    body: content(),
+      body: content(),
     );
   }
 }
