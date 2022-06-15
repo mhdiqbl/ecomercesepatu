@@ -11,10 +11,9 @@ import 'package:sepatu/pages/splash_page.dart';
 import 'package:sepatu/pages/sign_up_page.dart';
 
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

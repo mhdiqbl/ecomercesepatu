@@ -3,7 +3,6 @@ import 'package:sepatu/pages/splash_page.dart';
 import 'package:sepatu/theme.dart';
 
 class SignUpPage extends StatelessWidget {
-  const SignUpPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     Widget header() {

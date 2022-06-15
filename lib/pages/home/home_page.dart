@@ -4,7 +4,6 @@ import 'package:sepatu/widgets/product_card.dart';
 import 'package:sepatu/widgets/product_tile.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

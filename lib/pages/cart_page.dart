@@ -3,7 +3,6 @@ import 'package:sepatu/theme.dart';
 import 'package:sepatu/widgets/cart_card.dart';
 
 class Cartpage extends StatelessWidget {
-  const Cartpage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

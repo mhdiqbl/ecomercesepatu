@@ -3,7 +3,6 @@ import 'package:sepatu/theme.dart';
 import 'package:sepatu/widgets/wishlist_card.dart';
 
 class WishlistPage extends StatelessWidget {
-  const WishlistPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

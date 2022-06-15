@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:sepatu/theme.dart';
 
 class WishListCard extends StatelessWidget {
-  const WishListCard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

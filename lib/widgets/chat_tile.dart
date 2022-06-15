@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:sepatu/theme.dart';
 
 class ChatTile extends StatelessWidget {
-  const ChatTile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

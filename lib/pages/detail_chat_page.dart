@@ -4,7 +4,6 @@ import 'package:sepatu/theme.dart';
 import 'package:sepatu/widgets/chat_bubble.dart';
 
 class DetailChatPage extends StatelessWidget {
-  const DetailChatPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
