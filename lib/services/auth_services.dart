@@ -4,7 +4,7 @@ import 'package:sepatu/models/user_model.dart';
 import 'package:http/http.dart' as http;
 
 class AuthService {
-  String baseUrl = 'https://shamo-backend.buildwithangga.id/api';
+  String baseUrl = 'http://192.168.43.139:8000/api';
 
   Future<UserModel> register({
     String name,
@@ -26,6 +26,8 @@ class AuthService {
       headers: headers,
       body: body,
     );
+
+    print(response.body);
 
     if (response.statusCode == 200) {
       var data = jsonDecode(response.body)['data'];
