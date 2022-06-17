@@ -11,6 +11,7 @@ import 'package:sepatu/pages/sign_in_page.dart';
 import 'package:sepatu/pages/splash_page.dart';
 import 'package:sepatu/pages/sign_up_page.dart';
 import 'package:sepatu/providers/auth_provider.dart';
+import 'package:sepatu/providers/product_provider.dart';
 
 
 void main() => runApp(MyApp());
@@ -22,6 +23,8 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => AuthProvider(),
+        ),
+        ChangeNotifierProvider(create: (context) => ProductProvider()
         ),
       ],
       child: MaterialApp(
