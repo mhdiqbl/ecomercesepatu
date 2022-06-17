@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:sepatu/models/user_model.dart';
+import 'package:sepatu/providers/auth_provider.dart';
 import 'package:sepatu/theme.dart';
 import 'package:sepatu/widgets/product_card.dart';
 import 'package:sepatu/widgets/product_tile.dart';
 
 class HomePage extends StatelessWidget {
-
+  
   @override
   Widget build(BuildContext context) {
+    AuthProvider authProvider = Provider.of<AuthProvider>(context);
+    UserModel user = authProvider.user;
+    
     Widget header() {
       return Container(
         margin: EdgeInsets.only(
@@ -20,13 +26,13 @@ class HomePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Hallo, Alex',
+                  'Hallo, ${user.name}',
                   style: primaryTextStyle.copyWith(
                     fontSize: 24,
                     fontWeight: semiBold,
                   ),
                 ),
-                Text('@alexken',
+                Text('@${user.username}',
                     style: subtitletTextStyle.copyWith(
                       fontSize: 16,
                     )),
@@ -39,7 +45,9 @@ class HomePage extends StatelessWidget {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               image: DecorationImage(
-                image: AssetImage('assets/image_profile.png'),
+                image: NetworkImage(
+                  user.profilePhotoUrl
+                  ),
               ),
             ),
           )
