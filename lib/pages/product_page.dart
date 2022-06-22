@@ -1,8 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:sepatu/models/product_model.dart';
 import 'package:sepatu/theme.dart';
 
 class ProductPage extends StatefulWidget {
+  final ProductModel product;
+  ProductPage(this.product);
+  
   @override
   State<ProductPage> createState() => _ProductPageState();
 }
